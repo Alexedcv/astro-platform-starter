@@ -61,3 +61,20 @@ const exampleTag = tags[randomInt(0, tags.length - 1)];
         revalidate(tag);
     });
 </script>
+
+ <!-- Add a placeholder for the Twitch embed -->
+  <div id="twitch-embed"></div>
+
+  <!-- Load the Twitch embed script -->
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+  <!-- Create a Twitch.Player object. This will render within the placeholder div -->
+  <script type="text/javascript">
+    new Twitch.Player("twitch-embed", {
+      channel: "noctapus_247",
+      width: "100%",
+      height: "100%",
+      autoplay: true,
+      parent: [netlify.app]
+    });
+  </script>
